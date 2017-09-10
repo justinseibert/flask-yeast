@@ -2,16 +2,18 @@
 a Flask starter app with configuration, blueprints, and web-assets extensions
 
 ## run
-create a virtual environment outside of the app directory
+in local environment
 
 ```
-$ virtualenv venv
-$ . venv/bin/activate
-(venv)$ python run.py 'DEVELOPMENT'
+(venv)$ export FLASK_APP=dev.py
+(venv)$ export FLASK_DEBUG=1
+(venv)$ flask run --host=0.0.0.0
 ```
 
 ## features
-- `run.py` creates the app and starts the flask server with configuration environment (DEVELOPMENT or PRODUCTION) set by the system argument, defaults to PRODUCTION
+- `dev.py` run the development configuration (does not minify js/css)
+- `pro.py` run the production configuration
+
 - `app/app.py` creates the app with various configuration, blueprints, extensions, default error pages, etc
 - `app/config.py` contains configuration environments and variables
 - `app/site/` default location of main site files

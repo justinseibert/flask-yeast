@@ -10,31 +10,41 @@ class DefaultConfig(object):
     PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 
     DEBUG = False
-    TESTING = False
     ASSETS_DEBUG = False
 
     ADMINS = ['name@email.com']
 
     SECRET_KEY = 'secret key'
 
-    EXTENSIONS = []
+    EXTENSIONS = [
+        {
+            'name': 'js_all',
+            'bundle': [
+                'site/js/script1.js',
+                'site/js/script2.js'
+            ],
+            'filters': 'jsmin',
+            'output': 'site/js/all.min.js'
+        },
+        {
+            'name': 'sass_all',
+            'bundle': [
+                'site/sass/style1.scss',
+                'site/sass/style2.sass'
+            ],
+            'filters': 'libsass,cssmin',
+            'output': 'site/css/all.min.css'
+        }
+    ]
     BLUEPRINTS = [site, api]
 
 class DevConfig(DefaultConfig):
     # config for the development environment
 
     DEBUG = True
-    TESTING = True
+    TEMPLATES_AUTO_RELOAD = True
     ASSETS_DEBUG = True
 
-    EXTENSIONS = [
-        {
-            'name': 'js_all',
-            'bundle': ('jquery.js', 'base.js'),
-            'filters': 'jsmin',
-            'output': 'gen/all.min.js'
-        }
-    ]
     BLUEPRINTS = [site, api, admin]
 
 class ProdConfig(DefaultConfig):

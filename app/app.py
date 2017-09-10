@@ -33,7 +33,7 @@ def configure_blueprints(app, blueprints):
 def configure_extensions(assets, extensions):
     for extension in extensions:
         assets.register(extension['name'], Bundle(
-            extension['bundle'],
+            *extension['bundle'],
             filters=extension['filters'],
             output=extension['output']
         ))
