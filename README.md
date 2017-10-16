@@ -16,7 +16,7 @@ $ virtualenv venv3.5 -p python3.5
 $ . venv3.5/bin/activate
 (venv3.5)$ pip install -r requirements.txt
 ```
-3. run the app (__init__.py should be set to run DEVELOPMENT mode)
+3. run the app (\__init__.py should be set to run DEVELOPMENT mode)
 ```
 (venv)$ export FLASK_APP=__init__.py
 (venv)$ export FLASK_DEBUG=1
