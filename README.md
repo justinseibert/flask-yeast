@@ -1,23 +1,24 @@
 # flask-yeast
 a Flask starter app with configuration, blueprints, and web-assets extensions
 
-## run
-in local environment
+## setup
+1. change name of container directory to desired app name
+2. change all references of `EXAMPLE_APP` to match desired app directory name
+3. remove `-sample` from filenames in top-level directory and configure desired DEVELOPMENT and PRODUCTION variables in config.py
 
+## run in local environment
+1. create a virtual environment in app's top-level directory (venv* folder schemes are ignored by .gitignore)
 ```
-(venv)$ export FLASK_APP=dev.py
+$ virtualenv venv3.5 -p python3.5
+```
+2. install requirements
+```
+$ . venv3.5/bin/activate
+(venv3.5)$ pip install -r requirements.txt
+```
+3. run the app (__init__.py should be set to run DEVELOPMENT mode)
+```
+(venv)$ export FLASK_APP=__init__.py
 (venv)$ export FLASK_DEBUG=1
 (venv)$ flask run --host=0.0.0.0
 ```
-
-## features
-- `dev.py` run the development configuration (does not minify js/css)
-- `pro.py` run the production configuration
-
-- `app/app.py` creates the app with various configuration, blueprints, extensions, default error pages, etc
-- `app/config.py` contains configuration environments and variables
-- `app/site/` default location of main site files
-  - `views.py` default location for defining routes
-- `app/admin` default location for admin files, not included in production environment by default
-  - `views.py` default location for defining routes
-- `app/api/controls.py` default location for defining api response routes
