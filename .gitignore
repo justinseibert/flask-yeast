@@ -14,13 +14,13 @@
 
 *.sh
 
-EXAMPLE_APP/__init__.py
-EXAMPLE_APP/config.py
-EXAMPLE_APP/config_private.py
+**/__init__.py
+**/config.py
+**/config_private.py
 
-EXAMPLE_APP/static/.webassets-cache/*
-EXAMPLE_APP/venv*/*
-*/__pycache__/*
+**/static/.webassets-cache/*
+**/venv*/*
+**/__pycache__/*
 
 **/all.min.css
 **/all.min.js
