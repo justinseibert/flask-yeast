@@ -14,12 +14,12 @@
 
 *.sh
 
-/__init__.py
-/config.py
-/config_private.py
+EXAMPLE_APP/__init__.py
+EXAMPLE_APP/config.py
+EXAMPLE_APP/config_private.py
 
-/static/.webassets-cache/*
-/venv*/*
+EXAMPLE_APP/static/.webassets-cache/*
+EXAMPLE_APP/venv*/*
 */__pycache__/*
 
 **/all.min.css
