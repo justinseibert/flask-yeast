@@ -6,7 +6,6 @@ class DefaultConfig(object):
     # default config inherited by all
 
     PROJECT = 'EXAMPLE_APP'
-    PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
     ADMINS = ['admin@EXAMPLE_APP.com']
     VERSION = '0.1.0'
 

@@ -10,8 +10,8 @@ def create_app(config='PRODUCTION', app_name=None):
     app_name = ConfigPublic.DefaultConfig.PROJECT
     public = ConfigPublic.get_config(config)
     private = ConfigPrivate.get_config(config)
-    blueprints = config.BLUEPRINTS
-    extensions = config.EXTENSIONS
+    blueprints = public.BLUEPRINTS
+    extensions = public.EXTENSIONS
 
     app = Flask(app_name)
     assets = Environment(app)

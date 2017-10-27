@@ -36,7 +36,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/home/justin/projects/wrmota/venv3.5"
+set -gx VIRTUAL_ENV "/home/justin/projects/flask-yeast/EXAMPLE_APP/venv3.5"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH
