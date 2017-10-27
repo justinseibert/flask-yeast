@@ -3,19 +3,21 @@ from flask import Flask, g, render_template
 from flask_assets import Environment, Bundle
 from flask_wtf.csrf import CSRFProtect
 
-from EXAMPLE_APP import config as Config
+from EXAMPLE_APP import config_public as ConfigPublic
+from EXAMPLE_APP import config_private as ConfigPrivate
 
 def create_app(config='PRODUCTION', app_name=None):
-    app_name = Config.DefaultConfig.PROJECT
-    configurations = Config.get_config(config)
-    blueprints = configurations.BLUEPRINTS
-    extensions = configurations.EXTENSIONS
+    app_name = ConfigPublic.DefaultConfig.PROJECT
+    public = ConfigPublic.get_config(config)
+    private = ConfigPrivate.get_config(config)
+    blueprints = config.BLUEPRINTS
+    extensions = config.EXTENSIONS
 
     app = Flask(app_name)
     assets = Environment(app)
     csrf = CSRFProtect(app)
 
-    configure_app(app, configurations)
+    configure_app(app, public, private)
     configure_blueprints(app, blueprints)
     configure_extensions(assets, extensions)
 
@@ -25,8 +27,9 @@ def create_app(config='PRODUCTION', app_name=None):
 
     return app
 
-def configure_app(app, configurations):
-    app.config.from_object(configurations)
+def configure_app(app, public,private):
+    app.config.from_object(private)
+    app.config.from_object(public)
 
 def configure_blueprints(app, blueprints):
     for blueprint in blueprints:

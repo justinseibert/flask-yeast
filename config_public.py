@@ -13,9 +13,6 @@ class DefaultConfig(object):
     DEBUG = False
     ASSETS_DEBUG = False
 
-    SECRET_KEY = 'EXAMPLE_APP-secretkey'
-    DATABASE = os.path.join(PROJECT_ROOT, 'EXAMPLE_APP.db')
-
     EXTENSIONS = [
         {
             'name': 'js_lib',
