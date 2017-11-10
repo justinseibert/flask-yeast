@@ -1,0 +1,36 @@
+# ignores some standard stuff, maybe
+*.swp
+*.bak
+.DS_Store
+.DS_Store?
+.Spotlight-V100
+.Trashes
+
+# ignores the run.sh shortcut script used to launch a local DEVELOPMENT app
+*.sh
+
+# ignores the top-level init script used to specify between DEVELOPMENT and PRODUCTION modes
+# must be manually added to a live server (i.e. app = create_app('PRODUCTION'))
+/__init__.py
+
+# ignores config files with information that should not be exposed publicly, such as API keys
+**/config.py
+**/config_private.py
+
+# ignores cache elements and python virtual environment
+**/static/.webassets-cache/*
+**/__pycache__/*
+*.pyc
+**/venv*/*
+
+# ignores compiled css/js files so that PRODUCTION mode will be forced to rebuild new versions
+# may require reloading a live server to initialize
+**/all.min.css
+**/all.min.js
+**/lib.min.js
+
+# ignores database files so you don't do something stupid like overwrite the PRODUCTION version with the DEVELOPMENT version
+*.db
+*.log
+*.sql
+*.sqlite
