@@ -7,7 +7,7 @@ a Flask starter app with configuration, blueprints, and web-assets extensions
 3. remove `-sample` from filenames in top-level directory and configure desired DEVELOPMENT and PRODUCTION variables in config.py
 
 ## run in local environment
-1. create a virtual environment in app's top-level directory (venv* folder schemes are ignored by .gitignore)
+1. create a virtual environment in app's top-level directory (venv* folder schemes are ignored by .gitignore-sample)
 ```
 $ virtualenv venv3.5 -p python3.5
 ```
@@ -18,7 +18,11 @@ $ . venv3.5/bin/activate
 ```
 3. run the app (\__init__.py should be set to run DEVELOPMENT mode)
 ```
-(venv)$ export FLASK_APP=__init__.py
-(venv)$ export FLASK_DEBUG=1
-(venv)$ flask run --host=0.0.0.0
+$ source run.sh
+```
+or...
+```
+(venv3.5)$ export FLASK_APP=__init__.py
+(venv3.5)$ export FLASK_DEBUG=1
+(venv3.5)$ flask run --host=0.0.0.0
 ```
