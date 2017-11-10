@@ -12,6 +12,8 @@
 *.sql
 *.sqlite
 
+EXAMPLE_APP/__init__.py
+EXAMPLE_APP/config_private.py
 **/static/.webassets-cache/*
 **/venv*/*
 **/__pycache__/*
