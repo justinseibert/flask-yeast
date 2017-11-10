@@ -25,7 +25,6 @@ class DefaultConfig(object):
         {
             'name': 'sass_all',
             'bundle': [
-                '_site/sass/normalize.scss',
                 '_site/sass/main.sass',
             ],
             'filters': 'libsass,cssmin',
